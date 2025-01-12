@@ -561,6 +561,7 @@ const subcode = [
     "19B12HS412",
     "16B1NHS431",
     "24B11HS111",
+    "15B11CI471",
   ],
   [
     "Electrical I",
@@ -591,6 +592,7 @@ const subcode = [
     "Industrial Economics",
     "Human Resource Management",
     "Universal Human Values",
+    "Algorithms and Problem Solving Lab",
   ],
 ];
 

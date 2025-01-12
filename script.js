@@ -8,9 +8,6 @@ var finalelec;
 var check = 0;
 const daybut = document.querySelectorAll("#daySelector>button");
 
-
-
-
 async function toggleShrinkWithDelay(elementId, delay, yep) {
   return new Promise((resolve) => {
     setTimeout(resolve, delay);
@@ -20,20 +17,6 @@ async function toggleShrinkWithDelay(elementId, delay, yep) {
     // console.log("done");
   });
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 window.onscroll = () => {
   document.getElementById("scroll").style.transform = "translateY(-100px)";
@@ -61,15 +44,6 @@ window.onscroll = () => {
   // }
 };
 
-
-
-
-
-
-
-
-
-
 document.querySelectorAll("#flexsem>h2").forEach((item) => {
   item.addEventListener("click", () => {
     if (check != 1) {
@@ -88,7 +62,7 @@ document.querySelectorAll("#flexsem>h2").forEach((item) => {
     document.getElementById("electivePicker").style.display = "none";
 
     if (item.id == "s2") {
-      // item.style.fontSize = '1.5rem';
+   
       item.style.color = "black";
       const text = document.getElementById("s2");
 
@@ -105,7 +79,7 @@ document.querySelectorAll("#flexsem>h2").forEach((item) => {
       text.classList.add("grow");
       semSelect = 2;
     } else {
-      // item.style.fontSize = '1.5rem';
+      
       item.style.color = "black";
       if (document.getElementById("s2").classList[0] == "grow") {
         document.getElementById("leftball").classList.remove("drop");
@@ -123,17 +97,6 @@ document.querySelectorAll("#flexsem>h2").forEach((item) => {
   });
 });
 
-
-
-
-
-
-
-
-
-
-
-
 document.querySelector("#batch").addEventListener("click", (element) => {
   const ele = document.querySelector("#buttonContainer");
   const ele2 = document.getElementById("buttonContainerS");
@@ -142,7 +105,7 @@ document.querySelector("#batch").addEventListener("click", (element) => {
   if (semSelect == 2) {
     ele.classList.toggle("hidden");
   } else {
-    // console.log("yep");
+    
     ele2.classList.toggle("hidden");
   }
 
@@ -153,12 +116,7 @@ document.querySelector("#batch").addEventListener("click", (element) => {
 
   document.getElementById("timeTable").style.transform = "translateX(-200%)";
 
-  
-  
   divclear();
-
-
-
 
   daybut.forEach((itemm) => {
     if (itemm.innerText[0] == "-") {
@@ -166,58 +124,21 @@ document.querySelector("#batch").addEventListener("click", (element) => {
       itemm.style.width = "80px";
     }
   });
-
-
-
-
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 document.querySelectorAll("#buttonContainerS>button").forEach((item) => {
   item.addEventListener("click", () => {
     document.getElementById("batch").innerText = item.id;
-    finalbatch=item.id;
+    finalbatch = item.id;
     document.getElementById("buttonContainerS").classList.toggle("hidden");
 
     showelecmenu();
   });
 });
 
-
-
-
-
-
-
-
-
 function showelecmenu() {
-  document.getElementById('electivePicker').style.display='flex';
+  document.getElementById("electivePicker").style.display = "flex";
 }
-
-
-
-
-
-
-
 
 document.querySelectorAll("#electivePicker>button").forEach((item) => {
   item.addEventListener("click", () => {
@@ -229,13 +150,6 @@ document.querySelectorAll("#electivePicker>button").forEach((item) => {
   });
 });
 
-
-
-
-
-
-
-
 document.querySelectorAll("#buttonContainer>button").forEach((item) => {
   item.addEventListener("click", () => {
     document.querySelector("#batch").innerText = item.innerText;
@@ -243,14 +157,10 @@ document.querySelectorAll("#buttonContainer>button").forEach((item) => {
 
     const ele = document.querySelector("#buttonContainer");
     ele.classList.add("hidden");
-    
-      skipToDay();
+
+    skipToDay();
   });
 });
-
-
-
-
 
 function skipToDay() {
   document.getElementById("electivePicker").style.display = "none";
@@ -270,20 +180,12 @@ function skipToDay() {
   document.getElementById("daySelector").style.display = "flex";
   console.log(theday);
   console.log(dayOfWeek);
-if(dayOfWeek!=0){
-  const daybutt = document.getElementById(theday);
-  console.log(daybutt);
-  daybutt.innerText = "->" + daybutt.innerText;
+  if (dayOfWeek != 0) {
+    const daybutt = document.getElementById(theday);
+    console.log(daybutt);
+    daybutt.innerText = "->" + daybutt.innerText;
+  }
 }
-}
-
-
-
-
-
-
-
-
 
 updateDay();
 function updateDay() {
@@ -300,6 +202,7 @@ function updateDay() {
   ];
   const minutes = today.getHours();
   const seconds = today.getMinutes();
+  console.log();
   document.querySelector("#time>h1").innerText =
     days[dayOfWeek] + "\n" + minutes + ":" + seconds;
   var count = 0;
@@ -319,13 +222,6 @@ function updateDay() {
   }
   setTimeout(updateDay, 1000);
 }
-
-
-
-
-
-
-
 
 daybut.forEach((item) => {
   item.addEventListener("click", () => {
@@ -400,80 +296,70 @@ function mainconcept(day, batch) {
         });
       }
       break;
-    case 4:{ 
-      
-      
-    Object.entries(fournine).forEach((item) => {
-      if (item[0] == day) {
-        decifer4(item[1], batch, 1);
-      }
-    });
+    case 4: {
+      Object.entries(fournine).forEach((item) => {
+        if (item[0] == day) {
+          decifer4(item[1], batch, 1);
+        }
+      });
 
-    Object.entries(fourten).forEach((item) => {
-      if (item[0] == day) {
-        decifer4(item[1], batch, 2);
-      }
-    });
+      Object.entries(fourten).forEach((item) => {
+        if (item[0] == day) {
+          decifer4(item[1], batch, 2);
+        }
+      });
 
-    Object.entries(foureleven).forEach((item) => {
-      if (item[0] == day) {
-        decifer4(item[1], batch, 3);
-      }
-    });
+      Object.entries(foureleven).forEach((item) => {
+        if (item[0] == day) {
+          decifer4(item[1], batch, 3);
+        }
+      });
 
-    Object.entries(fourtwelve).forEach((item) => {
-      if (item[0] == day) {
-        decifer4(item[1], batch, 4);
-      }
-    });
-    Object.entries(fourone).forEach((item) => {
-      if (item[0] == day) {
-        decifer4(item[1], batch, 5);
-      }
-    });
-    Object.entries(fourtwo).forEach((item) => {
-      if (item[0] == day) {
-        decifer4(item[1], batch, 6);
-      }
-    });
-    Object.entries(fourthree).forEach((item) => {
-      if (item[0] == day) {
-        decifer4(item[1], batch, 7);
-      }
-    });
-    Object.entries(fourfour).forEach((item) => {
-      if (item[0] == day) {
-        decifer4(item[1], batch, 8);
-      }
-    });
-  }
+      Object.entries(fourtwelve).forEach((item) => {
+        if (item[0] == day) {
+          decifer4(item[1], batch, 4);
+        }
+      });
+      Object.entries(fourone).forEach((item) => {
+        if (item[0] == day) {
+          decifer4(item[1], batch, 5);
+        }
+      });
+      Object.entries(fourtwo).forEach((item) => {
+        if (item[0] == day) {
+          decifer4(item[1], batch, 6);
+        }
+      });
+      Object.entries(fourthree).forEach((item) => {
+        if (item[0] == day) {
+          decifer4(item[1], batch, 7);
+        }
+      });
+      Object.entries(fourfour).forEach((item) => {
+        if (item[0] == day) {
+          decifer4(item[1], batch, 8);
+        }
+      });
+    }
   }
 }
-function decifer4(todecode,batch,slot){
-
-
-  
-
-  todecode.forEach((str) =>{
-
-
+function decifer4(todecode, batch, slot) {
+  todecode.forEach((str) => {
+    str=str.trim();
     // console.log(str);
 
-     
-      if(str.substring(1,4)=='ALL' ){
-        // console.log("inside");
-        const fi=str.indexOf('(');
-        const li=str.lastIndexOf(')');
-        var subbe=str.substring(fi+1,li);
-        // console.log(subbe);
-        subbe=subbe.trim();
-        if(subbe==finalelec){
-          // console.log(str);
-          callit(str,slot);
-
-
-        }
+    if (str.substring(1, 4) == "ALL") {
+      // console.log("inside");
+      const fi = str.indexOf("(");
+      const li = str.lastIndexOf(")");
+      var subbe = str.substring(fi + 1, li);
+      // console.log(subbe);
+      subbe = subbe.trim();
+      if (subbe == finalelec) {
+        // console.log(str);
+        callit(str, slot);
       }
+    }
 
     if (str.includes(batch)) {
       if (batch == "F1") {
@@ -481,32 +367,26 @@ function decifer4(todecode,batch,slot){
         const pc = str.charAt(fi + 2);
         if (Number.isInteger(Number(pc))) {
         } else {
-          callit(str,slot);
+          callit(str, slot);
         }
-      } else if(batch == "E1"){
+      } else if (batch == "E1") {
         const fi = str.indexOf(batch);
         const pc = str.charAt(fi + 2);
         if (Number.isInteger(Number(pc))) {
         } else {
-          callit(str,slot);
+          callit(str, slot);
         }
       }
-      else{
-
-        callit(str,slot);
+      else if(str[0]=='T'){
+        if(str.includes(finalelec)){
+          callit(str,slot);
+        }
+      } else {
+        callit(str, slot);
       }
-
-      
     }
   });
-
 }
-
-
-
-
-
-
 
 function decifer(arr, batch, slot) {
   arr.forEach((str) => {
@@ -522,13 +402,6 @@ function decifer(arr, batch, slot) {
     }
   });
 }
-
-
-
-
-
-
-
 
 function callit(str, slot) {
   var fi = str.indexOf("(");
@@ -556,13 +429,6 @@ function callit(str, slot) {
     lastpart;
   setter(str, slot);
 }
-
-
-
-
-
-
-
 
 function setter(str, slot) {
   switch (slot) {
@@ -664,7 +530,6 @@ function divclear() {
 //     "LifeSkills",
 //   ],
 // ];
-
 
 const subcode = [
   [
@@ -1334,9 +1199,8 @@ const fourone = {
   Thursday: [],
   Friday: [],
   Saturday: [],
-  Sunday: []
+  Sunday: [],
 };
-
 
 const fourtwo = {
   Monday: [
